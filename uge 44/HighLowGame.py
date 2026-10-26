@@ -1,12 +1,14 @@
 import random as rnd
 
+
+
 def retry_function():
     while True:
-        retry = input("\nwould you like to play again? yes or no\n")
-        if retry.lower() == "no" or retry.lower() == "n":
+        retry = input("\nwould you like to play again? yes or no\n").strip().lower()
+        if retry in ("no", "n"):
             print("\nThank you for playing")
             return retry
-        elif retry.lower() == "yes" or retry.lower() == "y":
+        elif retry in ("yes", "y"):
             return retry
         else:
             print("you didnt write yes or no")
@@ -32,7 +34,7 @@ def game():
         goal = rnd.randint(1,100)
         numberGuessing(goal)
         retry = retry_function()
-        if retry.lower() == "no" or retry.lower() == "n":
+        if retry in ("no", "n"):
             break
 
 
