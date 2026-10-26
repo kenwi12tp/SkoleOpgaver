@@ -1,15 +1,15 @@
 import random as rnd
 
-def retry_function(guessed):
-    if guessed == True:
+def retry_function():
+    if True:
         retry = input("\nwould you like to play again? yes or no\n")
         if retry.lower() == "yes" or retry.lower() == "y":
-            guessed = False
-            return guessed, retry
+            return retry
 
         if retry.lower() == "no" or retry.lower() == "n":
             print("thanks for playing")
             return retry
+
 def numberGuessing(goal):
     while True:
         guess = input("Enter your guess: ")
@@ -28,14 +28,11 @@ def numberGuessing(goal):
 
 print("this is a game about guessing what number the pc is thinking about")
 def game():
-    guessed = False
-    while guessed == False:
+    while True:
         goal = rnd.randint(1,100)
-        guessed = numberGuessing(goal)
+        numberGuessing(goal)
 
-        guessed, retry = retry_function(guessed)
-        if retry.lower() == "yes" or retry.lower() == "y":
-            continue
+        retry = retry_function()
         if retry.lower() == "no" or retry.lower() == "n":
             break
 
