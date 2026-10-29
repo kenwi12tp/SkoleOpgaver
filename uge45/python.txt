@@ -1,0 +1,2 @@
+we have learned about diffrent python
+reading files and so on
