@@ -18,7 +18,7 @@ try:
               f"lastname: {person[1]}\n"
               f"role: {person[2]}\n"
               f"years of experience: {person[3]}\n\n")
-    print(f"total employees{len(cleanfile)}")
+    print(f"total employees: {len(cleanfile)}")
 
 #if the file isnt there it will tell the user
 except FileNotFoundError:
