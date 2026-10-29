@@ -31,21 +31,22 @@ def numberGuessing(goal):
 
             #turning it into an int so i can compare the goal and the guess
             guess = int(guess)
+            count += 1
 
             #the diffrent if statements dictates what happens when the user guesses too low or too high
             #or the exact number the pc is thinking of
             if guess == goal:
                 print("You guessed the right number congrats!!!")
-                count += 1
+
                 print(f"you used {count} guesses")
                 break
             elif guess > goal:
                 print("your guess was too high of a number")
-                count += 1
+
             elif guess < goal:
                 print("your guess was too low of a number")
-                count += 1
-            elif count == 10:
+
+            elif count > 10:
                 print(f"you have used all your guesses and have lost the game the number was {goal}")
 
         #this is what happens when the user doesnt write a number
