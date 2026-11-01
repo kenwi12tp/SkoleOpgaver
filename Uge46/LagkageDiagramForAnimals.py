@@ -1,15 +1,17 @@
-import csv
-
 import matplotlib.pyplot as plt
 
 animals =[]
 count = []
 
-with open('animal_counts_large.csv', newline="") as csvfile:
-    reader = csv.reader(csvfile, delimiter=',')
-    for row in reader:
-        animals.append(row[0])
-        count.append(int(row[1]))
+with open('animal_counts_large.csv') as csvfile:
+    content = csvfile.readlines()
+    for row in content:
+        newrow = row.split(',')
+        animals.append(newrow[0])
+        count.append(int(newrow[1]))
+print(animals)
+print(count)
+
 
 plt.pie(count, labels=animals, autopct='%1.1f%%',pctdistance=1, labeldistance=1.2)
 plt.title("zoo animals")
