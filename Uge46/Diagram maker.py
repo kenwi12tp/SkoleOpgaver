@@ -78,6 +78,5 @@ plt.title("zoo animals")
 plt.show()
 
 #histogram
-values= [1,2,3,4,3,3,3,2,2,1,1,5,5,6,7,7,6,6,5]
-plt.hist(values)
+plt.hist(count)
 plt.show()
